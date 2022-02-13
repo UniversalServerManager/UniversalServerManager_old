@@ -4,30 +4,26 @@ using System.Security.Cryptography;
 using System.Text;
 using UniversialServerManager;
 using USMLib.User;
+using Fleck;
 
 namespace UniversalServerManager.User
 {
-    internal class User : IUser
+    public class User : IUser
     {
         protected string passwordHash;
         protected string apiKey;
         public string Name { get; set; }
-        public string Password { set => passwordHash = SHA256(value); }
+        public string Password { set => passwordHash = Sha256(value); }
         public bool Online { get; set; }
         public Dictionary<string, Permission> permissionMap;
         public bool admin;
+        public IWebSocketConnection connection;
 
-        public static string SHA256(string str)
-        {
-            byte[] SHA256Data = Encoding.UTF8.GetBytes(str);
-            SHA256Managed Sha256 = new SHA256Managed();
-            byte[] by = Sha256.ComputeHash(SHA256Data);
-            return BitConverter.ToString(by).Replace("-", ""); //64
-        }
+        public static string Sha256(string str) => BitConverter.ToString(SHA256.HashData(Encoding.UTF8.GetBytes(str))).Replace("-", "");
 
         public bool CheckPasswordOrKey(string password)
         {
-            if (SHA256(password) == passwordHash)
+            if (Sha256(password) == passwordHash)
                 return true;
             else if (apiKey != null && password == apiKey)
                 return true;

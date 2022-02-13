@@ -7,6 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UniversalServerManager", "U
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "USMLib", "USMLib\USMLib.csproj", "{4D995A75-8EEA-4D79-8867-4C43B93D6B05}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HttpServer", "HttpServer", "{1DB69040-53D0-4235-BF8F-C12A65E4C681}"
+	ProjectSection(SolutionItems) = preProject
+		NOTICE.txt = NOTICE.txt
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpServer", "HttpServer\HttpServer\HttpServer.csproj", "{7CCFCD83-924A-4B7E-986E-0241AB1618A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,9 +28,16 @@ Global
 		{4D995A75-8EEA-4D79-8867-4C43B93D6B05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D995A75-8EEA-4D79-8867-4C43B93D6B05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D995A75-8EEA-4D79-8867-4C43B93D6B05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CCFCD83-924A-4B7E-986E-0241AB1618A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CCFCD83-924A-4B7E-986E-0241AB1618A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CCFCD83-924A-4B7E-986E-0241AB1618A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CCFCD83-924A-4B7E-986E-0241AB1618A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7CCFCD83-924A-4B7E-986E-0241AB1618A2} = {1DB69040-53D0-4235-BF8F-C12A65E4C681}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {52A87A0E-5F39-46DB-B200-011B63933D73}
